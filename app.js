@@ -9,7 +9,11 @@ connected
 })
 .catch((e) => console.log(e));
 
+app.use(express.json()); 
+const router = require('./routes/index.js');
+app.use('/api/v1',router);
 
-app.get('/',(res,req)=>{
+
+app.get('/',(req,res)=>{
     res.send("testing!");
 });
