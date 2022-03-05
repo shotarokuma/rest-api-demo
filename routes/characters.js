@@ -1,10 +1,15 @@
-const router = require('express').Router();
-const {getCharacter,getCharacters,postCharacter} = require('./controllers/characterControllers.js');
+const heroRouter  = require('express').Router();
+const villainRouter  = require('express').Router();
+const {getCharacter,getHeros,postHero,getVillains,postVillain} = require('../controllers/characterControllers.js');
 
 
-router.get('/',getCharacters);
-router.get('/:id',getCharacter);
-router.post('/',postCharacter);
+heroRouter.get('/',getHeros);
+heroRouter.get('/:id',getCharacter);
+heroRouter.post('/',postHero);
+villainRouter.get('/',getVillains);
+villainRouter.get('/:id',getCharacter);
+villainRouter.post('/',postVillain);
 
 
-module.exports = router;
+module.exports = heroRouter;
+module.exports = villainRouter;
